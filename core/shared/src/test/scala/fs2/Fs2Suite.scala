@@ -33,7 +33,7 @@ abstract class Fs2Suite
     with TestPlatform
     with Generators {
 
-  override def munitIOTimeout = 1.minute
+  override def munitIOTimeout: Duration = 1.minute
 
   override def scalaCheckTestParameters =
     super.scalaCheckTestParameters
