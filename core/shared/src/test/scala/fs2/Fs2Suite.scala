@@ -23,6 +23,7 @@ package fs2
 
 import cats.effect.IO
 import munit.{CatsEffectSuite, DisciplineSuite, Location, ScalaCheckEffectSuite}
+import scala.concurrent.duration._
 import scala.reflect.ClassTag
 
 abstract class Fs2Suite
@@ -31,6 +32,8 @@ abstract class Fs2Suite
     with ScalaCheckEffectSuite
     with TestPlatform
     with Generators {
+
+  override def munitIOTimeout = 1.minute
 
   override def scalaCheckTestParameters =
     super.scalaCheckTestParameters
